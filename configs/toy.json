@@ -1,0 +1,57 @@
+{
+ "model": "toy",
+ "dataset": "counterfact",
+ "cf_path": "data/counterfact.json",
+ "n_facts": 40,
+ "min_p": 0.1,
+ "min_margin": 1.0,
+ "max_per_rel": 8,
+ "scan": 1000,
+ "forget": 3,
+ "seeds": [
+  0,
+  1
+ ],
+ "lrs": [
+  0.001,
+  0.002
+ ],
+ "p_target": 0.01,
+ "max_steps": 300,
+ "k": 5,
+ "hi": 0.7,
+ "lo": 0.3,
+ "rr": 0.3,
+ "locate_stages": "light,heavy",
+ "results_dir": "results_toy",
+ "min_para_p": 0.0,
+ "ladder": [
+  {
+   "name": "x2",
+   "p_target": 0.01,
+   "heavy_mult": 2
+  }
+ ],
+ "methods": [
+  {
+   "name": "npo",
+   "beta": 0.1,
+   "retain_weight": 1.0
+  }
+ ],
+ "locate_lrs": [
+  0.001,
+  0.002
+ ],
+ "ladder_lrs": [
+  0.001,
+  0.002
+ ],
+ "methods_lrs": [
+  0.001,
+  0.002
+ ],
+ "methods_rungs": [
+  "x2"
+ ]
+}

@@ -1,0 +1,78 @@
+{
+ "model": "gpt2",
+ "dataset": "counterfact",
+ "cf_path": "data/counterfact.json",
+ "n_facts": 120,
+ "min_p": 0.1,
+ "min_margin": 1.0,
+ "max_per_rel": 8,
+ "scan": 8000,
+ "forget": 16,
+ "seeds": [
+  0,
+  1,
+  2,
+  3,
+  4
+ ],
+ "lrs": [
+  3e-06,
+  1e-06,
+  1e-05
+ ],
+ "p_target": 0.01,
+ "max_steps": 300,
+ "k": 5,
+ "hi": 0.7,
+ "lo": 0.3,
+ "rr": 0.3,
+ "locate_stages": "light,heavy",
+ "results_dir": "results",
+ "min_para_p": 0.0,
+ "ladder": [
+  {
+   "name": "x2",
+   "p_target": 0.01,
+   "heavy_mult": 2
+  },
+  {
+   "name": "p1e-3",
+   "p_target": 0.001,
+   "heavy_mult": 3
+  },
+  {
+   "name": "p1e-4",
+   "p_target": 0.0001,
+   "heavy_mult": 3
+  }
+ ],
+ "methods": [
+  {
+   "name": "graddiff",
+   "retain_weight": 1.0
+  },
+  {
+   "name": "npo",
+   "beta": 0.1,
+   "retain_weight": 1.0
+  }
+ ],
+ "locate_lrs": [
+  3e-06,
+  1e-06,
+  1e-05
+ ],
+ "ladder_lrs": [
+  3e-06,
+  1e-06,
+  1e-05
+ ],
+ "methods_lrs": [
+  3e-06,
+  1e-06,
+  1e-05
+ ],
+ "methods_rungs": [
+  "p1e-4"
+ ]
+}

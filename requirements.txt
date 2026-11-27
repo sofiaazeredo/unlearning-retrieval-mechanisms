@@ -1,0 +1,23 @@
+# Tested with Python 3.13, torch 2.14 (CUDA 13), Tesla T4 on Google Colab.
+# transformer_lens must stay on 2.x: 4.x removed HookedTransformer.
+# If `pip install transformer_lens==2.16.1` fails while building transformers-stream-generator,
+# install everything else first and then:  pip install --no-deps transformer_lens==2.16.1
+torch
+transformer_lens==2.16.1
+transformers
+datasets
+wandb
+einops
+jaxtyping
+beartype
+better-abc
+fancy-einsum
+typeguard
+numpy
+pandas
+scipy
+matplotlib
+rich
+sentencepiece
+accelerate
+pytest
